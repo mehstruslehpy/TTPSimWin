@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="TTPSimWinVersion" />
+		<Option makefile_is_custom="1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="main" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters=" pascal.ram" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="main" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option parameters="pascal.ram" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="CompSim.cpp" />
+		<Unit filename="CompSim.h" />
+		<Unit filename="ExperimentalParts/Code/Code.cpp" />
+		<Unit filename="ExperimentalParts/Code/Code.h" />
+		<Unit filename="ExperimentalParts/Stack/Stack.cpp" />
+		<Unit filename="ExperimentalParts/Stack/Stack.h" />
+		<Unit filename="ExperimentalParts/testRamReader/main.cpp" />
+		<Unit filename="IO/IO.cpp" />
+		<Unit filename="IO/IO.h" />
+		<Unit filename="IO/stub.cpp" />
+		<Unit filename="Instructions.cpp" />
+		<Unit filename="Makefile" />
+		<Unit filename="README.md" />
+		<Unit filename="Ram/Ram.cpp" />
+		<Unit filename="Ram/Ram.h" />
+		<Unit filename="Ram/stub.cpp" />
+		<Unit filename="RegBank/RegBank.cpp" />
+		<Unit filename="RegBank/RegBank.h" />
+		<Unit filename="RegBank/stub.cpp" />
+		<Unit filename="common.h" />
+		<Unit filename="defs.h" />
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -2,18 +2,14 @@ Debug: all
 Release: all
 all: main
 
-main: common.h ttpasm.cpp clean.o buildmap.o replace.o write.o
-	g++ -std=c++14 -g -Wall -pedantic ttpasm.cpp clean.o buildmap.o replace.o write.o -o asm
+main: main.cpp ./RegBank/RegBank.o ./Ram/Ram.o ./IO/IO.o CompSim.o
+	g++ -std=c++14 -g -Wall -pedantic main.cpp CompSim.o ./RegBank/RegBank.o ./Ram/Ram.o ./IO/IO.o -o main
 
-clean.o: clean.cpp clean.h
-	g++ -std=c++14 -g -Wall -pedantic clean.cpp -o clean.o -c
-buildmap.o: buildmap.cpp buildmap.h
-	g++ -std=c++14 -g -Wall -pedantic buildmap.cpp -o buildmap.o -c
-replace.o: replace.cpp replace.h
-	g++ -std=c++14 -g -Wall -pedantic replace.cpp -o replace.o -c
-write.o: write.cpp write.h
-	g++ -std=c++14 -g -Wall -pedantic write.cpp -o write.o -c
-
-clean:
-	rm *.o
-	rm asm
+CompSim.o: CompSim.h CompSim.cpp Instructions.cpp
+	g++ -std=c++14 -g -Wall -pedantic CompSim.cpp -o CompSim.o -c
+./RegBank/RegBank.o: ./RegBank/RegBank.h ./RegBank/RegBank.cpp
+	g++ -std=c++14 -g -Wall -pedantic ./RegBank/RegBank.cpp -o ./RegBank/RegBank.o -c
+./Ram/Ram.o: ./Ram/Ram.h ./Ram/Ram.cpp
+	g++ -std=c++14 -g -Wall -pedantic ./Ram/Ram.cpp -o ./Ram/Ram.o -c
+./IO/IO.o: ./IO/IO.h ./IO/IO.cpp
+	g++ -std=c++14 -g -Wall -pedantic ./IO/IO.cpp -o ./IO/IO.o -c
