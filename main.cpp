@@ -10,7 +10,15 @@ int charToNum(char);
 
 int main(int argc, char* argv[])
 {
-    if (argc != 2) return 1;
+	//Windows IO is unreasonably slow by default
+	//https://stackoverflow.com/questions/31162367/significance-of-ios-basesync-with-stdiofalse-cin-tienull
+	//we are not using stdio so don't worry about syncing buffers
+    ios_base::sync_with_stdio(false);
+	//we are not using cin so don't worry about synchronizing cin with cout
+	cin.tie(NULL);
+
+
+	if (argc != 2) return 1;
     ifstream file;
     file.open(string(argv[1]));
     vector<T> filevec = csvToRam(file);
