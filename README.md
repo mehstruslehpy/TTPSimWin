@@ -1,6 +1,7 @@
 # WHAT THIS IS:
 * This is a TTP emulator/simulator
-  * TTP stands for "Taks Toy Processor" it is a processor design used for an intro to assembly programming class I took.
+* TTP stands for "Taks Toy Processor" it is a processor design used for an intro to assembly programming class I took.
+* [binaries can be downloaded here](https://github.com/mehstruslehpy/TTPSimWin/releases)
 # TIPS AND USAGE:
 * For a first time run of the emulator try: __./main Progams/PascalFinal.ram__
 * Running __./main &lt;yourbinary&gt;__ will run your binary on the processor emulator and print output
